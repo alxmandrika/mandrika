@@ -299,41 +299,49 @@
             gap: 60px;
         }
 
-        .contact-item {
+        /* НОВЫЕ СТИЛИ — горизонтальные контакты (вместо старых .contact-item и .social-links) */
+        .contact-info-horizontal {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            margin-top: 8px;
+        }
+
+        .contact-item-horizontal {
             display: flex;
             align-items: center;
-            gap: 20px;
-            margin-bottom: 32px;
+            gap: 10px;
         }
 
-        .contact-item i {
-            width: 48px;
-            font-size: 1.4rem;
-            color: #1e4a6e;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 20px;
-            margin-top: 24px;
-        }
-
-        .social-icon {
+        .contact-item-horizontal i {
+            width: 40px;
+            height: 40px;
             background: #eef2f6;
-            width: 48px;
-            height: 48px;
             border-radius: 50%;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             color: #1e4a6e;
-            transition: 0.2s;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            transition: all 0.2s ease;
         }
 
-        .social-icon:hover {
+        .contact-item-horizontal a {
+            color: #2e5775;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .contact-item-horizontal:hover i {
             background: #1e4a6e;
             color: white;
+            transform: translateY(-2px);
+        }
+
+        .contact-item-horizontal:hover a {
+            color: #1e4a6e;
+            text-decoration: underline;
         }
 
         .quick-card {
@@ -368,6 +376,10 @@
             .btn-group { justify-content: center; }
             .section-title { text-align: center; border-left: none; padding-left: 0; }
             .container { padding: 0 24px; }
+            .contact-info-horizontal {
+                flex-direction: column;
+                gap: 16px;
+            }
         }
     </style>
 </head>
@@ -403,7 +415,7 @@
                 <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Связаться</a>
                 <a href="#experience" class="btn btn-outline"><i class="fas fa-briefcase"></i> Опыт</a>
                 <a href="what-i-do.html" class="btn btn-outline"><i class="fas fa-tasks"></i> Функции и обязанности</a>
-                <strong><a href="faq.html" class="btn btn-outline"><i class="fas fa-question-circle"></i> Ответы на вопросы</a></strong>
+                <a href="faq.html" class="btn btn-outline"><i class="fas fa-question-circle"></i> Ответы на вопросы</a>
                 <a href="#" id="downloadPdfBtn" class="btn btn-outline"><i class="fas fa-download"></i> PDF-резюме</a>
             </div>
         </div>
@@ -499,25 +511,25 @@
     <section id="contact">
         <h2 class="section-title">Контакты</h2>
         <div class="contact-grid">
-<div>
-            <div class="contact-info-horizontal">
-                <div class="contact-item-horizontal">
-                    <i class="fas fa-phone-alt"></i>
-                    <a href="tel:+79969430090">+7 (996) 943-00-90</a>
-                </div>
-                <div class="contact-item-horizontal">
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:al.al.mandrika@yandex.ru">al.al.mandrika@yandex.ru</a>
-                </div>
-                <div class="contact-item-horizontal">
-                    <i class="fab fa-telegram"></i>
-                    <a href="https://t.me/alxmandrika" target="_blank">@alxmandrika</a>
+            <div>
+                <div class="contact-info-horizontal">
+                    <div class="contact-item-horizontal">
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+79969430090">+7 (996) 943-00-90</a>
+                    </div>
+                    <div class="contact-item-horizontal">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:al.al.mandrika@yandex.ru">al.al.mandrika@yandex.ru</a>
+                    </div>
+                    <div class="contact-item-horizontal">
+                        <i class="fab fa-telegram"></i>
+                        <a href="https://t.me/alxmandrika" target="_blank">@alxmandrika</a>
+                    </div>
                 </div>
             </div>
-        </div> 
             <div class="quick-card">
                 <h4 style="margin-bottom: 12px;">Связаться быстро</h4>
-                <p>Telegram </p>
+                <p>Telegram</p>
                 <p style="margin-top: 16px;"><strong>📄 Полное резюме с деталями</strong> — по кнопке «PDF-резюме».</p>
             </div>
         </div>
