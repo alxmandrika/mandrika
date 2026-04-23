@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Александр Мандрика | Что я делаю на маркетплейсах</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f0f4f8 0%, #e8edf2 100%);
+            color: #1a2c3c;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        .top-strip {
+            text-align: center;
+            padding: 28px 0 20px 0;
+        }
+
+        .top-strip span {
+            font-size: 0.75rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #8aa9c2;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 20px 0 40px 0;
+            color: #1e4a6e;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 32px;
+            color: #0a2a3b;
+        }
+
+        .functions-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .function-category {
+            background: white;
+            border-radius: 24px;
+            padding: 20px 24px;
+            border: 1px solid #e2eaf2;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            transition: 0.2s;
+        }
+
+        .function-category:hover {
+            border-color: #c5d5e5;
+        }
+
+        .category-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1c4b63;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e2eaf2;
+        }
+
+        .function-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .function-list li {
+            font-size: 0.85rem;
+            color: #2e5775;
+            margin-bottom: 10px;
+            padding-left: 18px;
+            position: relative;
+            line-height: 1.45;
+        }
+
+        .function-list li::before {
+            content: "•";
+            position: absolute;
+            left: 4px;
+            color: #1e4a6e;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 48px;
+            font-size: 0.8rem;
+            color: #7f9eb3;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 24px;
+            }
+            .functions-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-strip">
+    <span>Что я делаю на маркетплейсах</span>
+</div>
+
+<div class="container">
+    <a href="index.html" class="back-link">
+        <i class="fas fa-arrow-left"></i> Вернуться к резюме
+    </a>
+
+    <h1>Мои задачи и зоны ответственности</h1>
+
+    <div class="functions-grid">
+
+        <!-- 📦 Логистика и поставки -->
+        <div class="function-category">
+            <div class="category-title">📦 Логистика и поставки (FBO/FBS)</div>
+            <ul class="function-list">
+                <li>Контролирую оборачиваемость товаров на складах маркетплейса для оптимизации расходов на хранение</li>
+                <li>Контролирую стоимость логистики на складах</li>
+                <li>Формирую список товаров к сборке на складе с учётом остатков и доступного количества</li>
+                <li>Передаю заявки на поставку FBO в соответствии со складскими правилами</li>
+            </ul>
+        </div>
+
+        <!-- 🎯 Акции и промо -->
+        <div class="function-category">
+            <div class="category-title">🎯 Акции и промо</div>
+            <ul class="function-list">
+                <li>Веду календарь акций и отслеживаю сроки проведения</li>
+                <li>Рассматриваю условия акций, считаю маржинальность товаров</li>
+                <li>Добавляю в акции товары, проходящие по маржинальности</li>
+                <li>Согласовываю лучшие условия акций с персональным менеджером маркетплейса</li>
+                <li>Добавляю в акции товары из категории неликвидов</li>
+            </ul>
+        </div>
+
+        <!-- 📊 Аналитика и юнит-экономика -->
+        <div class="function-category">
+            <div class="category-title">📊 Аналитика и юнит-экономика</div>
+            <ul class="function-list">
+                <li>Работаю с ABC-анализом ассортимента</li>
+                <li>Веду юнит-экономику по всему ассортименту</li>
+                <li>Отслеживаю маржинальность товаров по каждой категории</li>
+                <li>Корректирую цены для поддержания правильной маржинальности</li>
+                <li>Отслеживаю индекс цен и корректирую ошибки</li>
+                <li>Провожу анализ продаж по артикулам</li>
+                <li>Планирую количество продаж на определённый период</li>
+                <li>Работаю с план-фактом, формирую стратегию развития</li>
+            </ul>
+        </div>
+
+        <!-- 📈 Реклама -->
+        <div class="function-category">
+            <div class="category-title">📈 Реклама</div>
+            <ul class="function-list">
+                <li>Формирую стратегию ведения рекламных кампаний</li>
+                <li>Составляю списки товаров для добавления в рекламу</li>
+                <li>Отслеживаю ход рекламных кампаний и вношу корректировки</li>
+                <li>Веду рекламные кампании в рамках утверждённого бюджета</li>
+            </ul>
+        </div>
+
+        <!-- 🆕 Развитие товаров -->
+        <div class="function-category">
+            <div class="category-title">🆕 Развитие товаров (новинки и действующие позиции)</div>
+            <ul class="function-list">
+                <li>Разрабатываю стратегию вывода новых позиций с плашкой «Новинка»</li>
+                <li>Веду новые позиции в соответствии со стратегией</li>
+                <li>Разрабатываю стратегию развития действующих позиций (не новинок)</li>
+                <li>Веду позиции в обороте по разработанной стратегии</li>
+            </ul>
+        </div>
+
+        <!-- 🔍 Контент и SEO -->
+        <div class="function-category">
+            <div class="category-title">🔍 Контент и SEO</div>
+            <ul class="function-list">
+                <li>Улучшаю SEO карточек товаров</li>
+                <li>Улучшаю визуальную часть карточек вместе с отделом визуализации</li>
+                <li>Провожу A/B-тестирование различных схем оформления</li>
+                <li>Выявляю ошибки в карточках и устраняю их</li>
+                <li>Работаю с рекомендациями маркетплейса</li>
+                <li>Работаю со склейками товаров</li>
+            </ul>
+        </div>
+
+        <!-- 🛒 Загрузка и наполнение карточек -->
+        <div class="function-category">
+            <div class="category-title">🛒 Загрузка и наполнение карточек</div>
+            <ul class="function-list">
+                <li>Загружаю новые товары с заполнением всех возможных характеристик (в зависимости от категории)</li>
+                <li>Загружаю документацию к товару</li>
+                <li>Отправляю заявки на подтверждение качества или оригинальности товара</li>
+            </ul>
+        </div>
+
+        <!-- 🔎 Анализ рынка и конкурентов -->
+        <div class="function-category">
+            <div class="category-title">🔎 Анализ рынка и конкурентов</div>
+            <ul class="function-list">
+                <li>Анализирую конкурентов и ситуацию на рынке</li>
+                <li>Поддерживаю РРЦ, выявляю нарушения РРЦ конкурентами</li>
+                <li>Работаю со спросом и предложением</li>
+                <li>Увеличиваю среднюю цену продажи</li>
+            </ul>
+        </div>
+
+        <!-- 👥 Управление и стратегия -->
+        <div class="function-category">
+            <div class="category-title">👥 Управление и стратегия</div>
+            <ul class="function-list">
+                <li>Разрабатываю стратегию ведения магазина</li>
+                <li>Контролирую аналитику и рекламу кабинета (полный цикл)</li>
+                <li>Отслеживаю общие показатели кабинета, исправляю ошибки</li>
+                <li>Взаимодействую с топ-менеджментом компании</li>
+                <li>Управляю командой контента</li>
+                <li>Организую и контролирую работу менеджеров по продажам</li>
+                <li>Разрабатываю регламенты, скрипты и инструкции для менеджеров</li>
+                <li>Разрабатываю систему показателей эффективности продаж</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    <p>Александр Мандрика — полный цикл управления маркетплейсами. <a href="index.html" style="color: #1e4a6e;">Вернуться к резюме</a></p>
+</footer>
+
+</body>
+</html>
