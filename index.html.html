@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Александр Мандрика | Управление маркетплейсами</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f0f4f8 0%, #e8edf2 100%);
+            color: #1a2c3c;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .top-strip {
+            text-align: center;
+            padding: 28px 0 20px 0;
+            background: transparent;
+        }
+        .top-strip span {
+            font-size: 0.75rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #8aa9c2;
+            background: transparent;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 48px;
+        }
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            padding: 20px 0 80px 0;
+            background: linear-gradient(120deg, #ffffff 0%, #f2f6fa 100%);
+        }
+
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 80px;
+        }
+
+        .hero-content {
+            flex: 1.2;
+        }
+
+        .hero-badge {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #8aa9c2;
+            background: transparent;
+            display: inline-block;
+            padding: 0;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #0a2a3b;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-title {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #5a7e9c;
+            margin-bottom: 32px;
+            background: transparent;
+            display: inline-block;
+            padding: 0;
+            border-left: 3px solid #9bb8d0;
+            padding-left: 16px;
+        }
+
+        .hero-desc {
+            font-size: 1rem;
+            color: #2c4b5e;
+            margin-bottom: 36px;
+            max-width: 620px;
+            background: transparent;
+            padding: 0;
+            border: none;
+            line-height: 1.65;
+        }
+
+        .bold-highlight {
+            font-weight: 700;
+            font-size: 1.05rem;
+            background: transparent;
+            padding: 0;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .salary-block {
+            margin-bottom: 40px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .salary-block span {
+            background: #eef2f6;
+            color: #1a4a6e;
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid #d0dee8;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 32px;
+            border-radius: 44px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.25s;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background: #1e3b4a;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .btn-primary:hover {
+            background: #0f2c3a;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1.5px solid #bcd0df;
+            background: white;
+            color: #1e4a6e;
+        }
+
+        .btn-outline:hover {
+            border-color: #1e4a6e;
+            background: #f0f5fa;
+            color: #1e4a6e;
+        }
+
+        .hero-photo {
+            flex: 0.8;
+            text-align: center;
+        }
+
+        .photo-frame {
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: 0 25px 40px -12px rgba(0,0,0,0.15);
+            background: #eef2f6;
+            max-width: 400px;
+            margin: 0 auto;
+            transition: 0.2s;
+            border: 1px solid #dce5ed;
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid #dfe9f2;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 56px;
+            color: #0f3448;
+            padding-left: 20px;
+            border-left: 5px solid #1e4a6e;
+            letter-spacing: -0.3px;
+        }
+
+        .timeline-item {
+            background: #ffffff;
+            padding: 32px 36px;
+            margin-bottom: 24px;
+            border-radius: 32px;
+            transition: 0.2s;
+            border: 1px solid #e2eaf2;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+
+        .timeline-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 16px;
+        }
+
+        .job-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1c4b63;
+        }
+
+        .company {
+            font-weight: 500;
+            color: #1e5a7a;
+            font-size: 0.95rem;
+            margin-top: 6px;
+        }
+
+        .date {
+            font-size: 0.8rem;
+            color: #5f7f92;
+            background: #eef3f8;
+            padding: 5px 16px;
+            border-radius: 30px;
+            font-weight: 500;
+        }
+
+        .job-desc {
+            margin-top: 20px;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .job-desc li {
+            margin-bottom: 10px;
+            display: flex;
+            gap: 14px;
+            color: #2e5775;
+            font-size: 0.95rem;
+        }
+
+        .job-desc li i {
+            color: #1e4a6e;
+            font-size: 0.8rem;
+            margin-top: 4px;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .skill {
+            background: #ffffff;
+            border: 1px solid #d2e2ee;
+            padding: 10px 26px;
+            border-radius: 60px;
+            font-weight: 500;
+            color: #1e4f6e;
+            font-size: 0.9rem;
+        }
+
+        .edu-card {
+            background: #ffffff;
+            padding: 36px;
+            border-radius: 32px;
+            border: 1px solid #e2edf5;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.02);
+        }
+
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 60px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+
+        .contact-item i {
+            width: 48px;
+            font-size: 1.4rem;
+            color: #1e4a6e;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 24px;
+        }
+
+        .social-icon {
+            background: #eef2f6;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #1e4a6e;
+            transition: 0.2s;
+            font-size: 1.2rem;
+        }
+
+        .social-icon:hover {
+            background: #1e4a6e;
+            color: white;
+        }
+
+        .quick-card {
+            background: #f6fafd;
+            padding: 32px;
+            border-radius: 32px;
+            border: 1px solid #deecf5;
+        }
+
+        footer {
+            text-align: center;
+            padding: 48px;
+            font-size: 0.8rem;
+            color: #7f9eb3;
+            background: #f7fafc;
+            border-top: 1px solid #e6eef5;
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 32px;
+            }
+            .hero-grid {
+                gap: 50px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-grid { flex-direction: column-reverse; text-align: center; }
+            .hero-title { display: inline-block; border-left: none; padding-left: 0; }
+            .hero-desc { text-align: left; }
+            .btn-group { justify-content: center; }
+            .section-title { text-align: center; border-left: none; padding-left: 0; }
+            .container { padding: 0 24px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-strip">
+    <span>Управление маркетплейсами</span>
+</div>
+
+<div class="hero">
+    <div class="container hero-grid">
+        <div class="hero-content">
+            <div class="hero-badge"></div>
+            <h1>Александр Мандрика</h1>
+            <div class="hero-title">Менеджер маркетплейсов Ozon / WB</div>
+            <div class="salary-block">
+                <span><i class="fas fa-ruble-sign"></i> от 80 000 ₽</span>
+                <span><i class="fas fa-map-marker-alt"></i> Курск / удалённо</span>
+                <span><i class="fas fa-clock"></i> полная занятость</span>
+            </div>
+            <div class="hero-desc">
+                <strong class="bold-highlight">Уже более 3 лет являюсь менеджером маркетплейсов. На разных проектах был, как руководителем направления Ozon, так и менеджером.</strong>
+                Также за плечами полезный офисный опыт:<br>
+                <strong>• Старший специалист отдела цен и финансов в Росстат</strong><br>
+                <strong>• Маркетолог-аналитик</strong><br>
+                <strong>• Региональный менеджер по развитию Яндекс.Доставка в ЦФО</strong><br><br>
+                Благодаря этому опыту научился адаптироваться под разные условия, воспринимать и анализировать новую информацию.<br>
+                🔹 <strong>Сильно развиты:</strong> аналитическое мышление, стратегия, управление командой, подбор кадров, организация и контроль процессов, работа с визуальной составляющей.<br><br>
+                Ищу позицию, где смогу с головой погрузиться в задачи, связанные с Ozon, и принести результат.<br>
+                Спасибо за внимание. Открыт для диалога!
+            </div>
+            <div class="btn-group">
+                <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Связаться</a>
+                <a href="#experience" class="btn btn-outline"><i class="fas fa-briefcase"></i> Опыт</a>
+                <a href="#" id="downloadPdfBtn" class="btn btn-outline"><i class="fas fa-download"></i> PDF-резюме</a>
+            </div>
+        </div>
+        <div class="hero-photo">
+            <div class="photo-frame">
+                <img src="file:///C:/Users/jame9/Downloads/IMG_9492.jpg" alt="Александр Мандрика">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <section id="experience">
+        <h2 class="section-title">Опыт в e-commerce</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div><span class="job-title">Менеджер Ozon</span><div class="company">ИП (головные уборы, шапки)</div></div>
+                    <div class="date">Сен 2025 — Фев 2026</div>
+                </div>
+                <ul class="job-desc">
+                    <li><i class="fas fa-chevron-right"></i> Настройка рекламных кампаний, SEO-оптимизация карточек</li>
+                    <li><i class="fas fa-chevron-right"></i> Планирование поставок FBO/FBS, контроль оборачиваемости</li>
+                    <li><i class="fas fa-chevron-right"></i> Конкурентный анализ, ценообразование, работа с отзывами</li>
+                </ul>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div><span class="job-title">Руководитель направления Ozon</span><div class="company">AkTs (товары для дома)</div></div>
+                    <div class="date">Июнь 2024 — Июль 2025</div>
+                </div>
+                <ul class="job-desc">
+                    <li><i class="fas fa-chevron-right"></i> Юнит-экономика, ABC-анализ, корректировка цен, планирование продаж</li>
+                    <li><i class="fas fa-chevron-right"></i> Запуск рекламных кампаний</li>
+                    <li><i class="fas fa-chevron-right"></i> Работа с акциями</li>
+                    <li><i class="fas fa-chevron-right"></i> Оптимизация логистики</li>
+                </ul>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div><span class="job-title">Менеджер маркетплейсов</span><div class="company">Aquatic (рыбалка, туризм, сумки, мебель)</div></div>
+                    <div class="date">Июнь 2023 — Март 2024</div>
+                </div>
+                <ul class="job-desc">
+                    <li><i class="fas fa-chevron-right"></i> Анализ ниш, формирование ассортимента, запуск новинок</li>
+                    <li><i class="fas fa-chevron-right"></i> Настройка рекламы, работа с отзывами и лояльностью</li>
+                </ul>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div><span class="job-title">Менеджер маркетплейсов</span><div class="company">Next Step (женская обувь, аксессуары)</div></div>
+                    <div class="date">Март 2023 — Июнь 2023</div>
+                </div>
+                <ul class="job-desc">
+                    <li><i class="fas fa-chevron-right"></i> Создание и продвижение карточек, SEO, FBO/FBS логистика</li>
+                    <li><i class="fas fa-chevron-right"></i> Внедрение адресного хранения на складе, аудит остатков</li>
+                </ul>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div><span class="job-title">Региональный менеджер по развитию</span><div class="company">Яндекс Доставка (ЦФО)</div></div>
+                    <div class="date">Сен 2021 — Окт 2022</div>
+                </div>
+                <ul class="job-desc">
+                    <li><i class="fas fa-chevron-right"></i> B2B-переговоры, поиск и подключение партнеров</li>
+                    <li><i class="fas fa-chevron-right"></i> Развитие сервиса, операционное управление в регионах</li>
+                </ul>
+            </div>
+        </div>
+        <p style="margin-top: 28px; background: #eef4fa; padding: 16px 24px; border-radius: 32px; font-size: 0.9rem; color: #1c5d6e;">
+            📊 <strong>Опыт на госслужбе + аналитика:</strong> старший специалист отдела цен и финансов (Росстат), маркетолог-аналитик (Курский ЦУМ), экономист.
+        </p>
+    </section>
+
+    <section>
+        <h2 class="section-title">Навыки и инструменты</h2>
+        <div class="skills-grid">
+            <span class="skill">Ozon / WB</span><span class="skill">SEO карточек</span><span class="skill">FBO / FBS</span>
+            <span class="skill">Юнит-экономика</span><span class="skill">Рекламные кампании</span><span class="skill">ABC-анализ</span>
+            <span class="skill">Excel / Google Sheets</span><span class="skill">Управление командой</span><span class="skill">B2B переговоры</span>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Образование</h2>
+        <div class="edu-card">
+            <h3>Юго-Западный государственный университет (Курск)</h3>
+            <p style="margin-top: 8px;">Мировая экономика, специалитет (2015)</p>
+            <p style="margin-top: 16px; color: #1e4a6e;">➕ Курсы: аналитика маркетплейсов, продвижение на Ozon/Wildberries.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Контакты</h2>
+        <div class="contact-grid">
+            <div>
+                <div class="contact-item"><i class="fas fa-phone-alt"></i> +7 (996) 943-00-90</div>
+                <div class="contact-item"><i class="fas fa-envelope"></i> al.al.mandrika@yandex.ru</div>
+                <div class="contact-item"><i class="fab fa-telegram"></i> @alxmandrika</div>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+                    <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="quick-card">
+                <h4 style="margin-bottom: 12px;">Связаться быстро</h4>
+                <p>Telegram / звонок. Работа: удалённо / гибрид / офис в Курске.</p>
+                <p style="margin-top: 16px;"><strong>📄 Полное резюме с деталями</strong> — по кнопке «PDF-резюме».</p>
+            </div>
+        </div>
+    </section>
+</div>
+<footer>
+    <p>Александр Мандрика — управление маркетплейсами, аналитика, стратегия. Открыт для диалога.</p>
+</footer>
+
+<script>
+    document.getElementById('downloadPdfBtn').addEventListener('click', (e) => {
+        e.preventDefault();
+        const pdfPath = "C:\\Users\\jame9\\Downloads\\Мандрика Александр Александрович.pdf";
+        window.open(pdfPath, '_blank');
+    });
+</script>
+</body>
+</html>
