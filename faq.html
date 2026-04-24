@@ -255,15 +255,18 @@
 </footer>
 <script>
     (function() {
-        // Проверяем, что открыто в приложении Telegram
-        const isTelegram = navigator.userAgent.includes('Telegram') || 
-                           window.TelegramWebViewProxy !== undefined;
-        
-        if (isTelegram) {
-            // Блокируем свайп назад только в Telegram
+        // Принудительно удерживаем страницу в Telegram
+        if (navigator.userAgent.includes('Telegram') || window.TelegramWebViewProxy) {
+            setInterval(function() {
+                // Каждые 2 секунды перезаписываем историю
+                window.history.replaceState(null, null, window.location.href.split('#')[0]);
+            }, 2000);
+            
             window.history.pushState(null, null, window.location.href);
+            
             window.addEventListener('popstate', function() {
-                window.history.pushState(null, null, window.location.href);
+                window.history.go(1);
+                return false;
             });
         }
     })();
