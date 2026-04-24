@@ -546,23 +546,5 @@
         window.open(pdfPath, '_blank');
     });
 </script>
-<script>
-    (function() {
-        // Принудительно удерживаем страницу в Telegram
-        if (navigator.userAgent.includes('Telegram') || window.TelegramWebViewProxy) {
-            setInterval(function() {
-                // Каждые 2 секунды перезаписываем историю
-                window.history.replaceState(null, null, window.location.href.split('#')[0]);
-            }, 2000);
-            
-            window.history.pushState(null, null, window.location.href);
-            
-            window.addEventListener('popstate', function() {
-                window.history.go(1);
-                return false;
-            });
-        }
-    })();
-</script>
 </body>
 </html>
