@@ -546,5 +546,12 @@
         window.open(pdfPath, '_blank');
     });
 </script>
+<script>
+    // Предотвращаем случайный выход из Telegram WebView
+    window.history.pushState(null, null, window.location.href);
+    window.onpopstate = function() {
+        window.history.go(1);
+    };
+</script>  
 </body>
 </html>
