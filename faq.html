@@ -253,6 +253,12 @@
 <footer>
     <p>Александр Мандрика — ответы на частые вопросы. <a href="index.html" style="color: #1e4a6e;">Вернуться к резюме</a></p>
 </footer>
-
+<script>
+    // Предотвращаем случайный выход из Telegram WebView
+    window.history.pushState(null, null, window.location.href);
+    window.onpopstate = function() {
+        window.history.go(1);
+    };
+</script>    
 </body>
 </html>
