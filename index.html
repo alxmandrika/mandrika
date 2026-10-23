@@ -24,7 +24,6 @@
         .top-strip {
             text-align: center;
             padding: 28px 0 20px 0;
-            background: transparent;
         }
         .top-strip span {
             font-size: 0.75rem;
@@ -32,7 +31,6 @@
             letter-spacing: 3px;
             text-transform: uppercase;
             color: #8aa9c2;
-            background: transparent;
         }
 
         .container {
@@ -66,9 +64,7 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             color: #8aa9c2;
-            background: transparent;
             display: inline-block;
-            padding: 0;
             margin-bottom: 20px;
             font-weight: 400;
         }
@@ -87,9 +83,7 @@
             font-weight: 500;
             color: #5a7e9c;
             margin-bottom: 32px;
-            background: transparent;
             display: inline-block;
-            padding: 0;
             border-left: 3px solid #9bb8d0;
             padding-left: 16px;
         }
@@ -99,17 +93,12 @@
             color: #2c4b5e;
             margin-bottom: 36px;
             max-width: 620px;
-            background: transparent;
-            padding: 0;
-            border: none;
             line-height: 1.65;
         }
 
         .bold-highlight {
             font-weight: 700;
             font-size: 1.05rem;
-            background: transparent;
-            padding: 0;
             display: block;
             margin-bottom: 16px;
         }
@@ -184,7 +173,6 @@
             background: #eef2f6;
             max-width: 400px;
             margin: 0 auto;
-            transition: 0.2s;
             border: 1px solid #dce5ed;
         }
 
@@ -209,12 +197,12 @@
             letter-spacing: -0.3px;
         }
 
+        /* Опыт */
         .timeline-item {
             background: #ffffff;
             padding: 32px 36px;
             margin-bottom: 24px;
             border-radius: 32px;
-            transition: 0.2s;
             border: 1px solid #e2eaf2;
             box-shadow: 0 4px 12px rgba(0,0,0,0.02);
         }
@@ -251,7 +239,6 @@
 
         .job-desc {
             margin-top: 20px;
-            padding-left: 0;
             list-style: none;
         }
 
@@ -269,6 +256,84 @@
             margin-top: 4px;
         }
 
+        /* Функции и обязанности */
+        .functions-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .function-category {
+            background: white;
+            border-radius: 24px;
+            padding: 20px 24px;
+            border: 1px solid #e2eaf2;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+
+        .category-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1c4b63;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e2eaf2;
+        }
+
+        .function-list {
+            list-style: none;
+        }
+
+        .function-list li {
+            font-size: 0.85rem;
+            color: #2e5775;
+            margin-bottom: 10px;
+            padding-left: 18px;
+            position: relative;
+            line-height: 1.45;
+        }
+
+        .function-list li::before {
+            content: "•";
+            position: absolute;
+            left: 4px;
+            color: #1e4a6e;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: white;
+            border-radius: 24px;
+            padding: 28px 32px;
+            margin-bottom: 20px;
+            border: 1px solid #e2eaf2;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1c4b63;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .faq-question i {
+            color: #1e4a6e;
+            font-size: 1.2rem;
+        }
+
+        .faq-answer {
+            color: #2e5775;
+            padding-left: 32px;
+            line-height: 1.6;
+        }
+
+        /* Навыки */
         .skills-grid {
             display: flex;
             flex-wrap: wrap;
@@ -293,13 +358,13 @@
             box-shadow: 0 6px 14px rgba(0,0,0,0.02);
         }
 
+        /* Контакты */
         .contact-grid {
             display: flex;
             flex-wrap: wrap;
             gap: 60px;
         }
 
-        /* НОВЫЕ СТИЛИ — горизонтальные контакты (вместо старых .contact-item и .social-links) */
         .contact-info-horizontal {
             display: flex;
             flex-wrap: wrap;
@@ -371,15 +436,13 @@
 
         @media (max-width: 768px) {
             .hero-grid { flex-direction: column-reverse; text-align: center; }
-            .hero-title { display: inline-block; border-left: none; padding-left: 0; }
+            .hero-title { border-left: none; padding-left: 0; }
             .hero-desc { text-align: left; }
             .btn-group { justify-content: center; }
             .section-title { text-align: center; border-left: none; padding-left: 0; }
             .container { padding: 0 24px; }
-            .contact-info-horizontal {
-                flex-direction: column;
-                gap: 16px;
-            }
+            .functions-grid { grid-template-columns: 1fr; gap: 16px; }
+            .contact-info-horizontal { flex-direction: column; gap: 16px; }
         }
     </style>
 </head>
@@ -392,7 +455,6 @@
 <div class="hero">
     <div class="container hero-grid">
         <div class="hero-content">
-            <div class="hero-badge"></div>
             <h1>Александр Мандрика</h1>
             <div class="hero-title">Менеджер маркетплейсов Ozon / WB</div>
             <div class="salary-block">
@@ -414,8 +476,8 @@
             <div class="btn-group">
                 <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Связаться</a>
                 <a href="#experience" class="btn btn-outline"><i class="fas fa-briefcase"></i> Опыт</a>
-                <a href="what-i-do.html" class="btn btn-outline"><i class="fas fa-tasks"></i> Функции и обязанности</a>
-                <a href="faq.html" class="btn btn-outline"><i class="fas fa-question-circle"></i> Ответы на вопросы</a>
+                <a href="#functions" class="btn btn-outline"><i class="fas fa-tasks"></i> Функции</a>
+                <a href="#faq" class="btn btn-outline"><i class="fas fa-question-circle"></i> Вопросы</a>
                 <a href="#" id="downloadPdfBtn" class="btn btn-outline"><i class="fas fa-download"></i> PDF-резюме</a>
             </div>
         </div>
@@ -428,6 +490,8 @@
 </div>
 
 <div class="container">
+
+    <!-- ОПЫТ -->
     <section id="experience">
         <h2 class="section-title">Опыт в e-commerce</h2>
         <div class="timeline">
@@ -449,8 +513,7 @@
                 </div>
                 <ul class="job-desc">
                     <li><i class="fas fa-chevron-right"></i> Юнит-экономика, ABC-анализ, корректировка цен, планирование продаж</li>
-                    <li><i class="fas fa-chevron-right"></i> Запуск рекламных кампаний</li>
-                    <li><i class="fas fa-chevron-right"></i> Работа с акциями</li>
+                    <li><i class="fas fa-chevron-right"></i> Запуск рекламных кампаний, работа с акциями</li>
                     <li><i class="fas fa-chevron-right"></i> Оптимизация логистики</li>
                 </ul>
             </div>
@@ -460,7 +523,7 @@
                     <div class="date">Июнь 2023 — Март 2024</div>
                 </div>
                 <ul class="job-desc">
-                    <li><i class="fas fa-chevron-right"></i> Анализ ниш, формирование ассортимента, запуск новинок, СЕО оптимизация</li>
+                    <li><i class="fas fa-chevron-right"></i> Анализ ниш, формирование ассортимента, запуск новинок, SEO-оптимизация</li>
                     <li><i class="fas fa-chevron-right"></i> Настройка рекламы, работа с отзывами и лояльностью</li>
                 </ul>
             </div>
@@ -490,6 +553,193 @@
         </p>
     </section>
 
+    <!-- ФУНКЦИИ И ОБЯЗАННОСТИ -->
+    <section id="functions">
+        <h2 class="section-title">Функции и обязанности</h2>
+        <div class="functions-grid">
+
+            <div class="function-category">
+                <div class="category-title">📦 Логистика и поставки (FBO/FBS)</div>
+                <ul class="function-list">
+                    <li>Контролирую оборачиваемость товаров на складах маркетплейса для оптимизации расходов на хранение</li>
+                    <li>Контролирую стоимость логистики на складах</li>
+                    <li>Формирую список товаров к сборке на складе с учётом остатков и доступного количества</li>
+                    <li>Передаю заявки на поставку FBO в соответствии со складскими правилами</li>
+                </ul>
+            </div>
+
+            <div class="function-category">
+                <div class="category-title">🎯 Акции и промо</div>
+                <ul class="function-list">
+                    <li>Веду календарь акций и отслеживаю сроки проведения</li>
+                    <li>Рассматриваю условия акций, считаю маржинальность товаров</li>
+                    <li>Добавляю в акции товары, проходящие по маржинальности</li>
+                    <li>Согласовываю лучшие условия акций с персональным менеджером маркетплейса</li>
+                    <li>Добавляю в акции товары из категории неликвидов</li>
+                </ul>
+            </div>
+
+            <div class="function-category">
+                <div class="category-title">📊 Аналитика и юнит-экономика</div>
+                <ul class="function-list">
+                    <li>Работаю с ABC-анализом ассортимента</li>
+                    <li>Веду юнит-экономику по всему ассортименту</li>
+                    <li>Отслеживаю маржинальность товаров по каждой категории</li>
+                    <li>Корректирую цены для поддержания правильной маржинальности</li>
+                    <li>Отслеживаю индекс цен и корректирую ошибки</li>
+                    <li>Провожу анализ продаж по артикулам</li>
+                    <li>Планирую количество продаж на определённый период</li>
+                    <li>Работаю с план-фактом, формирую стратегию развития</li>
+                </ul>
+            </div>
+
+            <div class="function-category">
+                <div class="category-title">📈 Реклама</div>
+                <ul class="function-list">
+                    <li>Формирую стратегию ведения рекламных кампаний</li>
+                    <li>Составляю списки товаров для добавления в рекламу</li>
+                    <li>Отслеживаю ход рекламных кампаний и вношу корректировки</li>
+                    <li>Веду рекламные кампании в рамках утверждённого бюджета</li>
+                </ul>
+            </div>
+
+            <div class="function-category">
+                <div class="category-title">🆕 Развитие товаров (новинки и действующие позиции)</div>
+                <ul class="function-list">
+                    <li>Разрабатываю стратегию вывода новых позиций с плашкой «Новинка»</li>
+                    <li>Веду новые позиции в соответствии со стратегией</li>
+                    <li>Разрабатываю стратегию развития действующих позиций (не новинок)</li>
+                    <li>Веду позиции в обороте по разработанной стратегии</li>
+                </ul>
+            </div>
+
+            <div class="function-category">
+                <div class="category-title">🔍 Контент и SEO</div>
+                <ul class="function-list">
+                    <li>Улучшаю SEO карточек товаров</li>
+                    <li>Улучшаю визуальную часть карточек вместе с отделом визуализации</li>
+                    <li>Провожу A/B-тестирование различных схем оформления</li>
+                    <li>Выявляю ошибки в карточках и устраняю их</li>
+                    <li>Работаю с рекомендациями маркетплейса</li>
+                    <li>Работаю со склейками товаров</li>
+                </ul>
+            </div>
+
+            <div class="function-category">
+                <div class="category-title">🛒 Загрузка и наполнение карточек</div>
+                <ul class="function-list">
+                    <li>Загружаю новые товары с заполнением всех возможных характеристик (в зависимости от категории)</li>
+                    <li>Загружаю документацию к товару</li>
+                    <li>Отправляю заявки на подтверждение качества или оригинальности товара</li>
+                </ul>
+            </div>
+
+            <div class="function-category">
+                <div class="category-title">🔎 Анализ рынка и конкурентов</div>
+                <ul class="function-list">
+                    <li>Анализирую конкурентов и ситуацию на рынке</li>
+                    <li>Поддерживаю РРЦ, выявляю нарушения РРЦ конкурентами</li>
+                    <li>Работаю со спросом и предложением</li>
+                    <li>Увеличиваю среднюю цену продажи</li>
+                </ul>
+            </div>
+
+            <div class="function-category">
+                <div class="category-title">👥 Управление и стратегия</div>
+                <ul class="function-list">
+                    <li>Разрабатываю стратегию ведения магазина</li>
+                    <li>Контролирую аналитику и рекламу кабинета (полный цикл)</li>
+                    <li>Отслеживаю общие показатели кабинета, исправляю ошибки</li>
+                    <li>Взаимодействую с топ-менеджментом компании</li>
+                    <li>Управляю командой контента</li>
+                    <li>Организую и контролирую работу менеджеров по продажам</li>
+                    <li>Разрабатываю регламенты, скрипты и инструкции для менеджеров</li>
+                    <li>Разрабатываю систему показателей эффективности продаж</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <h2 class="section-title">Ответы на частые вопросы</h2>
+
+        <div class="faq-item">
+            <div class="faq-question"><i class="fas fa-briefcase"></i> Какой у вас формат работы?</div>
+            <div class="faq-answer">Полная занятость. Работаю удалённо, также готов к гибридному формату или работе в офисе (Курск).</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question"><i class="fas fa-ruble-sign"></i> Какие зарплатные ожидания?</div>
+            <div class="faq-answer">От 80 000 рублей на руки, в зависимости от зоны ответственности и объёма задач.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question"><i class="fas fa-calendar-alt"></i> Когда готовы приступить к работе?</div>
+            <div class="faq-answer">Готов выйти на работу в течение 5–10 дней после согласования всех деталей.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question"><i class="fas fa-chart-line"></i> С какими категориями товаров работали?</div>
+            <div class="faq-answer">Головные уборы, товары для дома, рыболовные товары, туристическое снаряжение (сумки, рюкзаки, мебель), женская обувь и аксессуары.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question"><i class="fas fa-chart-simple"></i> Какими инструментами аналитики владеете?</div>
+            <div class="faq-answer">Excel / Google Sheets (уверенный средний уровень: сводные таблицы, формулы, макросы), а также продвинутая аналитика маркетплейсов: MPStats, SellerStats, MarketGuru, MP Manager.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question"><i class="fas fa-chart-line"></i> С какими оборотами и количеством SKU работали?</div>
+            <div class="faq-answer">
+                <strong>Максимальный оборот:</strong> до 40 млн ₽ на трёх кабинетах Ozon. На основных проектах оборот стабильно был выше 10 млн ₽.<br><br>
+                <strong>Количество SKU под управлением:</strong><br>
+                • В штатной работе — от 100 до 1 500 SKU.<br>
+                • В проектах с дропшиппингом — до 10 000 SKU.<br>
+                • При строгом контроле и плановой работе — до 100 SKU под чётким управлением.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question"><i class="fas fa-rocket"></i> Как подходите к запуску новинок?</div>
+            <div class="faq-answer">
+                Запускал новинки системно: от идеи до стабильных продаж:<br>
+                1️⃣ Анализ ниши и конкурентов: оценка спроса, цен, сезонности.<br>
+                2️⃣ Юнит-экономика: расчёт себестоимости, маржинальности.<br>
+                3️⃣ Контент и SEO: ТЗ для дизайнера, тексты, ключевые запросы.<br>
+                4️⃣ Рекламный запуск: внутренняя реклама Ozon.<br>
+                5️⃣ Анализ и корректировки: ДРР, конверсия, позиции.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question"><i class="fas fa-ad"></i> Как работаете с рекламой? Какие метрики отслеживаете?</div>
+            <div class="faq-answer">
+                Настраиваю и веду рекламные кампании в полном цикле. Работаю с метриками: <strong>CPC, CTR, ДРР, CR (конверсия).</strong><br><br>
+                Использую внутреннюю аналитику Ozon и готовые отчёты (включая таблицы РнП).
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question"><i class="fas fa-truck-fast"></i> Как работаете с логистикой?</div>
+            <div class="faq-answer">
+                Занимался логистикой более года назад, ещё во времена индекса локализации. С тех пор слежу за трендами.<br><br>
+                <strong>Сейчас без проблем могу:</strong><br>
+                • Настроить аналитику поставок (оборачиваемость, остатки, прогноз).<br>
+                • Организовать отгрузки FBO и FBS.<br>
+                • Оптимизировать отгрузку на кластеры для расширения географии продаж.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question"><i class="fas fa-users"></i> Есть ли опыт управления командой?</div>
+            <div class="faq-answer">Да, на позиции руководителя направления Ozon управлял командой из 3 человек: ставил задачи, контролировал сроки, проводил обучение.</div>
+        </div>
+
+    </section>
+
+    <!-- НАВЫКИ -->
     <section>
         <h2 class="section-title">Навыки и инструменты</h2>
         <div class="skills-grid">
@@ -499,6 +749,7 @@
         </div>
     </section>
 
+    <!-- ОБРАЗОВАНИЕ -->
     <section>
         <h2 class="section-title">Образование</h2>
         <div class="edu-card">
@@ -508,6 +759,7 @@
         </div>
     </section>
 
+    <!-- КОНТАКТЫ -->
     <section id="contact">
         <h2 class="section-title">Контакты</h2>
         <div class="contact-grid">
@@ -529,7 +781,9 @@
             </div>
         </div>
     </section>
+
 </div>
+
 <footer>
     <p>Александр Мандрика — управление маркетплейсами, аналитика, стратегия. Открыт для диалога.</p>
 </footer>
